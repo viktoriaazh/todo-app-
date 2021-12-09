@@ -10,7 +10,8 @@ const port = process.env.PORT || 3001;
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb+srv://ViktoriaA:FSAwStv3AM5F9WZ@cluster0.yfqp2.mongodb.net/todos", {
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
